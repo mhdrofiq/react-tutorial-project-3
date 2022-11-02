@@ -1,4 +1,4 @@
-# React tutorial project 3 results
+# React tutorial project 3 results - AirBnB experiences clone
 
 This is the result of following a tutorial from freeCodeCamp.org on youtube. [Link to video](https://www.youtube.com/watch?v=bMknfKXIFA8&t=12s&ab_channel=freeCodeCamp.org)
 
