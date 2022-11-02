@@ -2,36 +2,39 @@ import React from "react"
 import Navbar from "./components/Navbar"
 import Hero from "./components/Hero"
 import Card from "./components/Card"
+import data from "./data"
 
 export default function App(){
+    const cards = data.map(item => {
+        return(
+            <Card
+                key={item.id}
+
+                // "spreads" the props of the object, the cleanest way but more obscure
+                {...item}
+
+                // the better way of passing props of an object, just pass the whole thing, explicit access in html
+                // item={item}
+
+                // the manual way of passing props of an object
+                // img={item.cover}
+                // title={item.title}
+                // rating={item.stats.rating}
+                // reviews={item.stats.reviews}
+                // price={item.price}
+                // location={item.location}
+                // openSpots={item.openSpots}
+            />
+        )
+    })
+
     return(
         <div className="container">
             <Navbar/>
             <Hero/>
-            <Card
-                img={require("./images/swim.png")}
-                title="Life lessons with Katie Zaferes"
-                rating="5.0"
-                reviews={6}
-                price={136}
-                location="USA"
-            />
-            <Card
-                img={require("./images/wedding.png")}
-                title="Learn wedding photography"
-                rating="5.0"
-                reviews={30}
-                price={125}
-                location="USA"
-            />
-            <Card
-                img={require("./images/bike.png")}
-                title="Group mountain biking"
-                rating="4.8"
-                reviews={2}
-                price={50}
-                location="USA"
-            />
+            <section className="cards-list">
+                {cards}
+            </section>
         </div>
     )
 }
